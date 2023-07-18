@@ -36,24 +36,16 @@ class HiddenFile(File):
     
     def hide_file(self) -> bool:
         """Makes the file no visible"""
-        print('Hiding file...')
-        if not os.path.isfile(self.path):
-            print('File doesnt exist...')
-            return False
+        if not os.path.isfile(self.path): return False
         os.system(f'attrib +h {self.path}')
         time.sleep(self.delay)
-        print('File hidden...')
         return True
 
     def show_file(self) -> bool:
         """Makes the file visible"""
-        print('Showing file...')
-        if not os.path.isfile(self.path):
-            print('File doesnt exist..')
-            return False
+        if not os.path.isfile(self.path): return False
         os.system(f'attrib -h {self.path}')
         time.sleep(self.delay)
-        print('File visible...')
         return True
 
 
@@ -65,7 +57,6 @@ class HiddenConfig(HiddenFile, Config):
     def get(self, key: str='') -> dict:
         """Returns the content of the config"""
         self.show_file()
-        print('Getting config...')
         config = super().get(key)
         self.hide_file()
         return config
@@ -73,7 +64,6 @@ class HiddenConfig(HiddenFile, Config):
     def save(self) -> None:
         """Saves the config"""
         self.show_file()
-        print('Saving config...')
         super().save()
         self.hide_file()
         

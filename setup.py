@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.2'
+VERSION = '0.0.3'
 DESCRIPTION = 'Applies activation for any program.'
 LONG_DESCRIPTION = 'A package to apply activation required to run any program, like a license.'
 
