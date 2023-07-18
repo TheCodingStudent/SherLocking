@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 DESCRIPTION = 'Applies activation for any program.'
 LONG_DESCRIPTION = 'A package to apply activation required to run any program, like a license.'
 
@@ -14,7 +14,7 @@ setup(
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
     install_requires=[
-
+        'ttkbootstrap'
     ],
     keywords=['python', 'locking', 'activation', 'trial', 'license'],
     classifiers=[
