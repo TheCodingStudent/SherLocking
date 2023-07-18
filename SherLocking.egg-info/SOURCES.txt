@@ -2,6 +2,7 @@ LICENSE
 README.md
 setup.py
 SherLocking/__init__.py
+SherLocking/__main__.py
 SherLocking/activation.py
 SherLocking/config.py
 SherLocking/file.py
