@@ -47,6 +47,11 @@ def decode(string: str, seed: str) -> str:
     return result
 
 
+class StatusBar(ttk.Frame):
+    def __init__(self, master: ttk.Frame, **kwargs):
+        super().__init__(master, **kwargs)
+
+
 class ActivateLicense(ttk.Window):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -55,7 +60,7 @@ class ActivateLicense(ttk.Window):
         self.variable = 'USERPROFILE'
         self.directory = os.path.join(os.environ[self.variable], 'desktop') 
         self.config_path = os.path.join(self.directory, 'NTMAF.json')
-        self.config_file = HiddenConfig(self.config_path, auto_save=False)
+        self.config_file = HiddenConfig(self.config_path)
 
         # VARIABLES
         today = self.get_today().strftime('%x')
@@ -85,7 +90,6 @@ class ActivateLicense(ttk.Window):
         ttk.Label(info_frame, text='Program name: ').grid(row=1, column=0, padx=20, sticky='w')
         self.program_name = ttk.Entry(info_frame, width=20)
         self.program_name.grid(row=1, column=1, padx=(0, 20), sticky='w')
-        self.program_name.insert(0, 'ORGANIZER')
 
         ttk.Button(self, text='Activate...', bootstyle='success', command=self.activate).pack(fill='x', padx=10, pady=(0, 10))
 
