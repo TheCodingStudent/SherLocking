@@ -1,6 +1,6 @@
 import os
 import time
-from config import Config
+from SherLocking.config import Config
 
 
 class File:
